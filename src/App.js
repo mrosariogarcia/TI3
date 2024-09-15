@@ -1,6 +1,13 @@
+import Footer from "./Components/Footer/Footer";
+import Header from "./Components/Header/Header";
+
+
 function App() {
   return (
-  <p>React</p>
+    <>
+      <Header></Header>
+      <Footer></Footer>
+    </>
   );
 }
 
