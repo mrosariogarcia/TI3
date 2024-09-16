@@ -2,15 +2,11 @@ import React from 'react'
 
 import "./Header.css"
 
-import {Route, Link} from 'react-router-dom'
-
-import Home from '../../Pages/Home'
-import Favorites from '../../Pages/Favorites'
-import Populares from '../../Pages/Populares'
-import Cartelera from '../../Pages/Cartelera'
+import { Link } from 'react-router-dom'
 
 
-const Header = () => {
+
+const Header = (props) => {
   return (
     <>
       <section className="header">
@@ -24,25 +20,19 @@ const Header = () => {
 
         </div>
         <nav>
-          <form>
-          <input type="text" placeholder="Buscar..."/>
-          <button type="submit">Buscar</button>
-          </form>
 
-          <Link to="/" exact="true">Home</Link> 
+
+          <Link to="/" exact="true">Home</Link>
           <Link to="/favorites">Favorites</Link>
           <Link to="/populares">Populares</Link>
           <Link to="/cartelera">En Cartelera</Link>
 
-          <Route path="/" exact={true} component={Home}></Route>
-          <Route path="/favorites"  component={Favorites}></Route>
-          <Route path="/populares"  component={Populares}></Route>
-          <Route path="/cartelera"  component={Cartelera}></Route>
 
-          
+
+
         </nav>
       </section>
-       
+
     </>
   )
 }

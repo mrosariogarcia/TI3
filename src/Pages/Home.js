@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MovieGrid from '../Components/MovieGrid/MovieGrid';
+import { SearchForm } from '../Components/SearchForm/SearchForm';
 
 class Home extends Component {
   constructor(props) {
@@ -44,10 +45,15 @@ class Home extends Component {
 
     return (
       <>
+        <SearchForm history={this.props.history} />
+
         <section>
           <h2>Películas Populares</h2>
           <MovieGrid movies={popularMovies.slice(0, 5)} />
         </section>
+
+
+
 
         <section>
           <h2>Películas en Cartelera</h2>
