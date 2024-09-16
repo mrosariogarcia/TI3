@@ -1,8 +1,12 @@
 import React from 'react'
+import MovieGrid from '../Components/MovieGrid/MovieGrid'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <>
+    <MovieGrid></MovieGrid>
+    </>
+    
   )
 }
 

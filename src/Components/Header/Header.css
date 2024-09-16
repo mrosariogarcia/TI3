@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.header{
+  background-color: black;
+}
+
+.titulo{
+  display: flex; /* Usamos Flexbox para alinear el logo y el título */
+  justify-content: center; /* Centra el contenido horizontalmente */
+  align-items: center; /* Alinea verticalmente el logo y el título en el mismo nivel */
+  padding: 20px;
+  position: relative;
+}
+
+.logo{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Forma circular */
+}
+
+h1 {
+  font-family: 'Bebas Neue', sans-serif; /* Fuente impactante */
+  color:beige;
+  font-size: 60px; /* Tamaño grande e impactante */
+  letter-spacing: 10px; /* Espacio entre letras para mayor énfasis */
+  text-transform: uppercase; /* Texto en mayúsculas */
+  margin: 10px;
+  text-align: center;
+  position: relative;
+
+}
+
+h3 {
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  color:beige;
+  font-size: 20px; /* Tamaño grande e impactante */
+  letter-spacing: 5px; /* Espacio entre letras para mayor énfasis */
+  margin: 0;
+  text-align: center;
+  position: relative;
+}
+
+nav {
+    background-color: black;
+    padding: 15px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  
+  
