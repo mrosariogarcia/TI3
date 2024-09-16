@@ -6,7 +6,8 @@ import {Route, Link} from 'react-router-dom'
 
 import Home from '../../Pages/Home'
 import Favorites from '../../Pages/Favorites'
-import Detail from '../../Pages/Detail'
+import Populares from '../../Pages/Populares'
+import Cartelera from '../../Pages/Cartelera'
 
 
 const Header = () => {
@@ -23,13 +24,22 @@ const Header = () => {
 
         </div>
         <nav>
+          <form>
+          <input type="text" placeholder="Buscar..."/>
+          <button type="submit">Buscar</button>
+          </form>
+
           <Link to="/" exact="true">Home</Link> 
           <Link to="/favorites">Favorites</Link>
-          <Link to="/detail">Detalle</Link>
+          <Link to="/populares">Populares</Link>
+          <Link to="/cartelera">En Cartelera</Link>
 
           <Route path="/" exact={true} component={Home}></Route>
           <Route path="/favorites"  component={Favorites}></Route>
-          <Route path="/detail"  component={Detail}></Route>
+          <Route path="/populares"  component={Populares}></Route>
+          <Route path="/cartelera"  component={Cartelera}></Route>
+
+          
         </nav>
       </section>
        
