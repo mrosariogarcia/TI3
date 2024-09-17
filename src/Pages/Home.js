@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import MovieGrid from '../Components/MovieGrid/MovieGrid';
 import { SearchForm } from '../Components/SearchForm/SearchForm';
 
+import { Link } from 'react-router-dom'
+
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -49,6 +51,7 @@ class Home extends Component {
 
         <section>
           <h2>Películas Populares</h2>
+          
           <MovieGrid movies={popularMovies.slice(0, 5)} />
         </section>
 
@@ -57,6 +60,7 @@ class Home extends Component {
 
         <section>
           <h2>Películas en Cartelera</h2>
+          <Link to="/cartelera">Ver mas</Link>
           <MovieGrid movies={nowPlayingMovies.slice(0, 5)} />
         </section>
       </>
