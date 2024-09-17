@@ -2,6 +2,7 @@ import"./Movie.css"
 
 import { Component } from "react";
 import { Link } from "react-router-dom";
+import { FaHeart } from "react-icons/fa";
 
 class Movie extends Component{
     constructor(props) {
@@ -29,7 +30,7 @@ class Movie extends Component{
           <p className={this.state.showExtra ? "show": "hide"}>{overview}</p>
                     <button onClick={() => this.verMas()}>{this.state.showExtra ? "Ver menos": "Ver más"}</button>  
 
-          <Link to="/favoritos"> <button className="botonFavorito">f</button></Link>
+          <Link to="/favoritos"><button className="botonFavorito"> <FaHeart size={20} /></button></Link>
         </div>
       </article>
         </>
