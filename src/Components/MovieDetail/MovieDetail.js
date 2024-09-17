@@ -25,7 +25,7 @@ class MovieDetail extends Component {
 
     if (movie) {
     const { title, poster_path, vote_average, release_date, runtime, overview, genres } = movie;
-    const generos = genres.map(genre => genre.name).join(", ");
+    const generos = genres.map(genre => <li key={genre.id}>{genre.name}</li>);
 
     return (
       <section className='movie-detail'>
