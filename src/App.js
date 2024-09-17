@@ -6,6 +6,8 @@ import Favorites from "./Pages/Favorites";
 import Populares from "./Pages/Populares";
 import Cartelera from "./Pages/Cartelera";
 import SearchResults from "./Pages/SearchResults";
+import NotFound from './Pages/NotFound';
+
 
 
 
@@ -20,6 +22,8 @@ function App() {
           <Route path="/populares" component={Populares}></Route>
           <Route path="/cartelera" component={Cartelera}></Route>
           <Route path="/search" component={SearchResults}></Route>
+          <Route path="" component={NotFound}/>
+
         </Switch>
         <Footer></Footer>
       </BrowserRouter>
