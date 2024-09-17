@@ -51,12 +51,9 @@ class Home extends Component {
 
         <section>
           <h2>Películas Populares</h2>
-          
+          <Link to="/populares">Ver mas</Link>
           <MovieGrid movies={popularMovies.slice(0, 5)} />
         </section>
-
-
-
 
         <section>
           <h2>Películas en Cartelera</h2>
