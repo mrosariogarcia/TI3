@@ -1,43 +1,64 @@
-
-.show{
-    display: block;
+.show {
+  display: block;
 }
 
-.hide{
-    display: none;
+.hide {
+  display: none;
 }
 
 section h2 {
-    font-size: 24px; /* Tamaño de fuente más grande */
-    color: #205f9d; /* Azul marino */
-    margin-bottom: 5px; /* Reducir el espacio debajo del título */
-    text-align: center; /* Centrar el texto */
-  }
-  
-  .link-container {
-    text-align: center;
-    margin-bottom: 10px; /* Reducir el espacio debajo del enlace */
-  }
-  
-  .ver-mas {
-    display: inline-block;
-    color: #205f9d;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px 20px;
-    border: 2px solid #205f9d;
-    border-radius: 5px;
-  }
-  
-  .ver-mas:hover {
-    background-color: #001f3f;
-    color: white;
-  }
-  
-  /* MovieGrid: Asegúrate de que no haya márgenes grandes aquí que causen espacio adicional */
-  .MovieGrid {
-    margin-top: 10px; /* Reducir el espacio superior si es necesario */
-  }
-  
+  font-size: 24px; /* Tamaño de fuente más grande */
+  color: #205f9d; /* Azul marino */
+  margin-bottom: 5px; /* Reducir el espacio debajo del título */
+  text-align: center; /* Centrar el texto */
+}
+
+.link-container {
+  text-align: center;
+  margin-bottom: 10px; /* Reducir el espacio debajo del enlace */
+}
+
+.ver-mas {
+  display: inline-block;
+  color: #205f9d;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px solid #205f9d;
+  border-radius: 5px;
+}
+
+.ver-mas:hover {
+  background-color: #001f3f;
+  color: white;
+}
+
+/* Estilos para el botón de favoritos */
+.botonFavorito {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: #205f9d; /* Mantener el color azul marino del texto */
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px; /* Espacio entre el botón y el texto de 'Ver más' */
+}
+
+.botonFavorito:hover {
+  color: #001f3f; /* Mantener el color azul marino cuando el botón esté en hover */
+}
+
+/* Espacio entre el ícono y el texto */
+.botonFavorito span {
+  margin-left: 8px;
+}
+
+/* Ajustar el espacio en MovieGrid si es necesario */
+.MovieGrid {
+  margin-top: 10px; /* Reducir el espacio superior si es necesario */
+}
+
   

@@ -31,7 +31,7 @@ class Populares extends Component {
     return (
       <>
         <section>
-          <h2>Películas en Cartelera</h2>
+          <h2>Películas Populares</h2>
           <MovieGrid movies={popularesMovies} />
         </section>
       </>

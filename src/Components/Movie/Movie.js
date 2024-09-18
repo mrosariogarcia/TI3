@@ -1,39 +1,76 @@
-import"./Movie.css"
+import "./Movie.css"
 
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 
-class Movie extends Component{
-    constructor(props) {
+class Movie extends Component {
+  constructor(props) {
     super(props);
     this.state = {
-      showExtra: false
+      showExtra: false,
+      favorito: false
     };
   }
+  componentDidMount() {
+    const storage = localStorage.getItem('favoritos');
+    const parsedArray = JSON.parse(storage) || [];
+    if (parsedArray.includes(this.props.movie.id)) {
+      this.setState({ favorito: true });
+    }
+  }
 
-  verMas(){
+  agregarFavorito() {
+    const storage = localStorage.getItem('favoritos');
+    const parsedArray = storage ? JSON.parse(storage) : [];
+
+    if (!parsedArray.includes(this.props.movie.id)) {
+      parsedArray.push(this.props.movie.id);
+      localStorage.setItem('favoritos', JSON.stringify(parsedArray));
+      this.setState({ favorito: true });
+    }
+  }
+
+
+  quitarFavorito() {
+    const storage = localStorage.getItem('favoritos');
+    const parsedArray = JSON.parse(storage) || [];
+
+    const favoritosRestantes = parsedArray.filter(id => id !== this.props.movie.id);
+    localStorage.setItem('favoritos', JSON.stringify(favoritosRestantes));
+
+    this.setState({ favorito: false });
+  }
+
+
+  verMas() {
     this.setState({
-        showExtra : !this.state.showExtra
+      showExtra: !this.state.showExtra
     })
   }
 
-  render(){
-     const { id, title, poster_path, overview } = this.props.movie;
-    return(
-        <>
+  render() {
+    const { id, title, poster_path, overview } = this.props.movie;
+    return (
+      <>
         <article className="movie-grid">
-        <div>
-          <img src={`https://image.tmdb.org/t/p/w400${poster_path}`} alt={title} />
-          <Link to={`/movies/${id}`}>{title}</Link>  
+          <div>
+            <img src={`https://image.tmdb.org/t/p/w400${poster_path}`} alt={title} />
+            <Link to={`/movies/${id}`}>{title}</Link>
 
-          <p className={this.state.showExtra ? "show": "hide"}>{overview}</p>
-                    <button onClick={() => this.verMas()}>{this.state.showExtra ? "Ver menos": "Ver más"}</button>  
+            <p className={this.state.showExtra ? "show" : "hide"}>{overview}</p>
+            <button onClick={() => this.verMas()}>{this.state.showExtra ? "Ver menos" : "Ver más"}</button>
 
-          <Link to="/favoritos"><button className="botonFavorito"> <FaHeart size={20} /></button></Link>
-        </div>
-      </article>
-        </>
+            <button
+              className="botonFavorito"
+              onClick={() => this.state.favorito ? this.quitarFavorito() : this.agregarFavorito()}
+            >
+              {this.state.favorito ? "Quitar de favoritos" : "Agregar a favoritos"}
+              <FaHeart size={20} />
+            </button>
+          </div>
+        </article>
+      </>
     )
   }
 }

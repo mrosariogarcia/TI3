@@ -8,6 +8,7 @@ class MovieDetail extends Component {
     super(props);
     this.state = {
       movie: null,
+      favorito: false
     };
   }
 
@@ -18,35 +19,69 @@ class MovieDetail extends Component {
       .then(response => response.json())
       .then(data => {
         this.setState({ movie: data });
+
+        // Verificar favoritos en detalle tambien
+        const storage = localStorage.getItem('favoritos');
+        const parsedArray = JSON.parse(storage) || [];
+        if (parsedArray.includes(movieId)) {
+          this.setState({ favorito: true });
+        }
       })
       .catch(error => console.log(error));
+  }
+
+  agregarFavorito() {
+    const storage = localStorage.getItem('favoritos');
+    const parsedArray = storage ? JSON.parse(storage) : [];
+
+    if (!parsedArray.includes(this.props.movie.id)) {
+      parsedArray.push(this.props.movie.id);
+      localStorage.setItem('favoritos', JSON.stringify(parsedArray));
+      this.setState({ favorito: true });
+    }
+  }
+
+
+  quitarFavorito() {
+    const storage = localStorage.getItem('favoritos');
+    const parsedArray = JSON.parse(storage) || [];
+
+    const favoritosRestantes = parsedArray.filter(id => id !== this.props.movie.id);
+    localStorage.setItem('favoritos', JSON.stringify(favoritosRestantes));
+
+    this.setState({ favorito: false });
   }
 
   render() {
     const { movie } = this.state;
 
     if (movie) {
-    const { title, poster_path, vote_average, release_date, runtime, overview, genres } = movie;
-    const generos = genres.map(genre => <li key={genre.id}>{genre.name}</li>);
+      const { title, poster_path, vote_average, release_date, runtime, overview, genres } = movie;
+      const generos = genres.map(genre => <li key={genre.id}>{genre.name}</li>);
 
-    return (
-      <section className='movie-detail'>
-        <div className="detail-content">
-          <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} />
-          <h2>{title}</h2>
-          <p><strong>Calificación:</strong> {vote_average} / 10</p>
-          <p><strong>Fecha de estreno:</strong> {release_date}</p>
-          <p><strong>Duración:</strong> {runtime} minutos</p>
-          <p><strong>Sinopsis:</strong> {overview}</p>
-          <p><strong>Género:</strong> {generos}</p>
-          <button className="botonFavorito"> <FaHeart size={20} />
-          </button>
-        </div>
-      </section>
-    );
-  }}
+      return (
+        <section className='movie-detail'>
+          <div className="detail-content">
+            <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} />
+            <h2>{title}</h2>
+            <p><strong>Calificación:</strong> {vote_average} / 10</p>
+            <p><strong>Fecha de estreno:</strong> {release_date}</p>
+            <p><strong>Duración:</strong> {runtime} minutos</p>
+            <p><strong>Sinopsis:</strong> {overview}</p>
+            <p><strong>Género:</strong> {generos}</p>
+            <button
+              className="botonFavorito"
+              onClick={() => this.state.favorito ? this.quitarFavorito() : this.agregarFavorito()}
+            >
+              {this.state.favorito ? "Quitar de favoritos" : "Agregar a favoritos"}
+              <FaHeart size={20} />
+            </button>
+          </div>
+        </section>
+      );
+    } return <p>Loading...</p>;
+  }
 }
 
 export default MovieDetail;
 
-    
