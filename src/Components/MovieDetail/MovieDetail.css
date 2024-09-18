@@ -1,0 +1,60 @@
+.movie-detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .detail-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    background-color: #03044e7c;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .detail-content img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .detail-content h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .detail-content p {
+    margin: 5px 0;
+    color: white;
+  }
+  
+  .detail-content strong {
+    color: white;
+  }
+  
+  .detail-content ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 10px;
+  }
+
+  
+  .botonFavorito {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .botonFavorito:hover {
+    color: #e74c3c;
+  }
+  

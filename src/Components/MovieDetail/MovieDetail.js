@@ -1,5 +1,7 @@
 import { Component } from "react";
 import { FaHeart } from "react-icons/fa";
+import "./MovieDetail.css"
+
 
 class MovieDetail extends Component {
   constructor(props) {

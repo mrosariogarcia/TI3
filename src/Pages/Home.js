@@ -51,13 +51,17 @@ class Home extends Component {
 
         <section>
           <h2>Películas Populares</h2>
-          <Link to="/populares">Ver mas</Link>
+          <div className="link-container">
+            <Link className="ver-mas" to="/populares">Ver más</Link>
+          </div>
           <MovieGrid movies={popularMovies.slice(0, 5)} />
         </section>
 
         <section>
           <h2>Películas en Cartelera</h2>
-          <Link to="/cartelera">Ver mas</Link>
+          <div className="link-container">
+            <Link className="ver-mas" to="/cartelera">Ver más</Link>
+          </div>
           <MovieGrid movies={nowPlayingMovies.slice(0, 5)} />
         </section>
       </>

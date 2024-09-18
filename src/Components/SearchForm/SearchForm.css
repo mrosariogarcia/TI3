@@ -1,0 +1,32 @@
+.search-container {
+    background-color: #001f3f; /* Azul marino de fondo */
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados para el contenedor */
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre el input y el botón */
+  }
+  
+  .search-container input {
+    background-color: #fff; /* Fondo blanco para el input */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados para el input */
+    padding: 10px;
+    color: #333; /* Color del texto */
+    font-size: 16px; /* Tamaño del texto */
+  }
+  
+  .search-container button {
+    background-color: #ffcc00; /* Botón amarillo */
+    border: none;
+    color: #fff; /* Texto blanco en el botón */
+    padding: 10px 20px;
+    border-radius: 4px; /* Bordes redondeados para el botón */
+    font-size: 16px; /* Tamaño del texto */
+    cursor: pointer;
+  }
+  
+  .search-container button:hover {
+    background-color: #ff9900; /* Color de fondo del botón cuando se pasa el ratón por encima */
+  }
+  

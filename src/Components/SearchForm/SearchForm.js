@@ -1,4 +1,5 @@
 import { Component } from "react";
+import './SearchForm.css';
 export class SearchForm extends Component {
 
     constructor(props) {
@@ -19,7 +20,7 @@ export class SearchForm extends Component {
     }
     render() {
         return (
-            <div>
+            <div className="search-container">
                 <input onChange={(e) => this.handleInputChange(e)}
                     type="text" name='query' value={this.state.query} />
                 <button onClick={() => this.handleInputSubmit()}  >Buscar</button>
