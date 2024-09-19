@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MovieGrid from '../Components/MovieGrid/MovieGrid';
-
+import Loading from '../Components/Loading/Loading'
 class Favoritos extends Component {
   constructor(props) {
     super(props);
@@ -33,7 +33,7 @@ class Favoritos extends Component {
     const { movies, isLoading } = this.state;
     return (
       <div>
-        {isLoading ? <p>Loading ...</p> : <MovieGrid movies={movies} />}
+        {isLoading ? <Loading /> : <MovieGrid movies={movies} />}
       </div>
     );
   }

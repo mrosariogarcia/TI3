@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MovieGrid from '../Components/MovieGrid/MovieGrid';
 import { SearchForm } from '../Components/SearchForm/SearchForm';
-
+import Loading from '../Components/Loading/Loading'; 
 import { Link } from 'react-router-dom'
 
 class Home extends Component {
@@ -10,6 +10,7 @@ class Home extends Component {
     this.state = {
       popularMovies: [],
       nowPlayingMovies: [],
+      isLoading: true, 
     };
   }
 
@@ -39,11 +40,19 @@ class Home extends Component {
           console.error('No se encuentran películas en cartelera');
         }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.log(error))
+      .finally(() => {
+       
+        this.setState({ isLoading: false });
+      });
   }
 
   render() {
-    const { popularMovies, nowPlayingMovies } = this.state;
+    const { popularMovies, nowPlayingMovies, isLoading } = this.state;
+
+    if (isLoading) {
+      return <Loading />;
+    }
 
     return (
       <>

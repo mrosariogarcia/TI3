@@ -1,0 +1,13 @@
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+
+  .mensaje {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #123abc;
+  }

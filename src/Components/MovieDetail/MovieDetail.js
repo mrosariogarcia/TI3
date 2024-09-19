@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { FaHeart } from "react-icons/fa";
 import "./MovieDetail.css"
+import Loading from '../Loading/Loading'
 
 
 class MovieDetail extends Component {
@@ -71,15 +72,14 @@ class MovieDetail extends Component {
             <p><strong>Género:</strong> {generos}</p>
             <button
               className="botonFavorito"
-              onClick={() => this.state.favorito ? this.quitarFavorito() : this.agregarFavorito()}
-            >
+              onClick={() => this.state.favorito ? this.quitarFavorito() : this.agregarFavorito()}>
               {this.state.favorito ? "Quitar de favoritos" : "Agregar a favoritos"}
               <FaHeart size={20} />
             </button>
           </div>
         </section>
       );
-    } return <p>Loading...</p>;
+    } return <Loading />;
   }
 }
 
