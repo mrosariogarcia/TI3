@@ -1,5 +1,4 @@
 import "./Movie.css"
-
 import { Component } from "react";
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
@@ -23,7 +22,6 @@ class Movie extends Component {
   agregarFavorito() {
     const storage = localStorage.getItem('favoritos');
     const parsedArray = storage ? JSON.parse(storage) : [];
-
     if (!parsedArray.includes(this.props.movie.id)) {
       parsedArray.push(this.props.movie.id);
       localStorage.setItem('favoritos', JSON.stringify(parsedArray));
@@ -35,10 +33,8 @@ class Movie extends Component {
   quitarFavorito() {
     const storage = localStorage.getItem('favoritos');
     const parsedArray = JSON.parse(storage) || [];
-
     const favoritosRestantes = parsedArray.filter(id => id !== this.props.movie.id);
     localStorage.setItem('favoritos', JSON.stringify(favoritosRestantes));
-
     this.setState({ favorito: false });
   }
 
@@ -57,10 +53,8 @@ class Movie extends Component {
           <div>
             <img src={`https://image.tmdb.org/t/p/w400${poster_path}`} alt={title} />
             <Link className="title" to={`/movies/${id}`}>{title}</Link>
-
             <p className={`overview ${this.state.showExtra ? "show" : "hide"}`}>{overview}</p>
             <button onClick={() => this.verMas()}>{this.state.showExtra ? "Ver menos" : "Ver más"}</button>
-
             <button className="botonFavorito" onClick={() => this.state.favorito ? this.quitarFavorito() : this.agregarFavorito()}>
               {this.state.favorito ? "Quitar de favoritos" : "Agregar a favoritos"}<FaHeart size={20} />
             </button>

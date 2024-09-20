@@ -44,3 +44,17 @@
   background-color: #ff9900;
   /* Color de fondo del botón cuando se pasa el ratón por encima */
 }
+
+.results{
+  font-size: 20px;
+  /* Tamaño de fuente más grande */
+  color: white;
+  /* Azul marino */
+  margin-bottom: 5px;
+  /* Reducir el espacio debajo del título */
+  text-align: center;
+  /* Centrar el texto */
+  font-family: 'Bebas Neue', sans-serif;
+  padding: 5px;
+  letter-spacing: 1px;
+}

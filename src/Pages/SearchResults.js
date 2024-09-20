@@ -46,7 +46,7 @@ export default class SearchResults extends Component {
     return (
       <>
         <section>
-          <p>Resultado de búsqueda: {this.props.location.state?.query}</p>
+          <p className="results">Resultado de búsqueda: {this.props.location.state?.query}</p>
 
           {isLoading ? (
             <Loading /> 
@@ -55,7 +55,7 @@ export default class SearchResults extends Component {
           ) : searchMovie.length > 0 ? (
             <MovieGrid movies={searchMovie} />
           ) : (
-            <p>No se encontraron resultados para tu búsqueda.</p>
+            <p className="results">No se encontraron resultados para tu búsqueda.</p>
           )}
         </section>
       </>

@@ -86,3 +86,14 @@ section h2 {
   margin-top: 10px;
   /* Reducir el espacio superior si es necesario */
 }
+
+.results2{
+  font-size: 20px;
+  /* Tamaño de fuente más grande */
+  color: #205f9d;
+  /* Azul marino */
+  margin-bottom: 5px;
+  font-family: 'Bebas Neue', sans-serif;
+  padding: 5px;
+  letter-spacing: 1px;
+}

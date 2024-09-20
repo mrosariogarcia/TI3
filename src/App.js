@@ -1,6 +1,6 @@
+import { Route, BrowserRouter, Switch } from 'react-router-dom'
 import Footer from "./Components/Footer/Footer";
 import Header from "./Components/Header/Header";
-import { Route, BrowserRouter, Switch } from 'react-router-dom'
 import Home from "./Pages/Home";
 import Favorites from "./Pages/Favorites";
 import Populares from "./Pages/Populares";
@@ -22,7 +22,6 @@ function App() {
           <Route path="/search" component={SearchResults}></Route>
           <Route path="/movies/:movieId" exact component={MovieDetail}></Route>
           <Route path="" component={NotFound} />
-
         </Switch>
         <Footer></Footer>
       </BrowserRouter>
