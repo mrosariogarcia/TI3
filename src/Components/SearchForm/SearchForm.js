@@ -9,7 +9,6 @@ export class SearchForm extends Component {
         }
     }
     handleInputChange(e) {
-        //console.log(e)
         this.setState({
             query: e.target.value
         })
@@ -28,8 +27,4 @@ export class SearchForm extends Component {
         )
 
     }
-
-
-
-
 }

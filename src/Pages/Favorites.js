@@ -31,11 +31,15 @@ class Favoritos extends Component {
 
   render() {
     const { movies, isLoading } = this.state;
-    return (
-      <div>
-        {isLoading ? <Loading /> : <MovieGrid movies={movies} />}
-      </div>
-    );
+    if (isLoading) {
+      return <Loading />;
+    }
+
+    if (movies.length === 0) {
+      return <p>No tienes peliculas en favoritos</p>; // Mensaje cuando no hay películas favoritas
+    }
+
+    return <MovieGrid movies={movies} />;
   }
 }
 

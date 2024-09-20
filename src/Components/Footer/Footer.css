@@ -1,20 +1,31 @@
 .footer {
     display: flex;
-    justify-content: flex-start; /* Alinea los elementos a la izquierda */
-    align-items: flex-end; /* Alinea los elementos hacia abajo */
+    justify-content: flex-start;
+    /* Alinea los elementos a la izquierda */
+    align-items: flex-end;
+    /* Alinea los elementos hacia abajo */
     padding: 20px;
     height: 120px;
-    width: 100%; /* Asegura que ocupe todo el ancho disponible */
-    background-image: url('../../../public/images/footer.jpeg'); /* Ruta desde la carpeta public */
-    background-size: cover; /* Cubre todo el área del footer */
-    background-position: center; /* Centra la imagen de fondo */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    width: 100%;
+    /* Asegura que ocupe todo el ancho disponible */
+    background-image: url('../../../public/images/footer.jpeg');
+    /* Ruta desde la carpeta public */
+    background-size: cover;
+    /* Cubre todo el área del footer */
+    background-position: center;
+    /* Centra la imagen de fondo */
+    background-repeat: no-repeat;
+    /* Evita que la imagen se repita */
 }
 
 h2 {
     color: rgb(239, 12, 12);
     font-size: 20px;
     padding: 2px;
-    margin: 0; /* Asegura que no haya márgenes adicionales que puedan afectar el diseño */
-    margin-left: 20px; /* Añade un margen izquierdo si deseas separar el texto del borde */
+    margin: 0;
+    /* Asegura que no haya márgenes adicionales que puedan afectar el diseño */
+    margin-left: 20px;
+    /* Añade un margen izquierdo si deseas separar el texto del borde */
+    font-family: 'Bebas Neue', sans-serif;
+    letter-spacing: 1px;
 }

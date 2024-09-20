@@ -7,15 +7,28 @@
 }
 
 section h2 {
-  font-size: 24px; /* Tamaño de fuente más grande */
-  color: #205f9d; /* Azul marino */
-  margin-bottom: 5px; /* Reducir el espacio debajo del título */
-  text-align: center; /* Centrar el texto */
+  font-size: 28px;
+  /* Tamaño de fuente más grande */
+  color: #205f9d;
+  /* Azul marino */
+  margin-bottom: 5px;
+  /* Reducir el espacio debajo del título */
+  text-align: center;
+  /* Centrar el texto */
+  font-family: 'Bebas Neue', sans-serif;
+  padding: 5px;
+  letter-spacing: 1px;
+}
+
+.overview {
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
 }
 
 .link-container {
   text-align: center;
-  margin-bottom: 10px; /* Reducir el espacio debajo del enlace */
+  margin-bottom: 10px;
+  /* Reducir el espacio debajo del enlace */
 }
 
 .ver-mas {
@@ -27,6 +40,14 @@ section h2 {
   padding: 10px 20px;
   border: 2px solid #205f9d;
   border-radius: 5px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-family: 'Bebas Neue', sans-serif;
+  padding: 5px;
+  letter-spacing: 1px;
 }
 
 .ver-mas:hover {
@@ -41,14 +62,18 @@ section h2 {
   justify-content: center;
   background: none;
   border: none;
-  color: #205f9d; /* Mantener el color azul marino del texto */
+  color: #205f9d;
+  /* Mantener el color azul marino del texto */
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px; /* Espacio entre el botón y el texto de 'Ver más' */
+  margin-top: 10px;
+  /* Espacio entre el botón y el texto de 'Ver más' */
+
 }
 
 .botonFavorito:hover {
-  color: #001f3f; /* Mantener el color azul marino cuando el botón esté en hover */
+  color: #001f3f;
+  /* Mantener el color azul marino cuando el botón esté en hover */
 }
 
 /* Espacio entre el ícono y el texto */
@@ -58,7 +83,6 @@ section h2 {
 
 /* Ajustar el espacio en MovieGrid si es necesario */
 .MovieGrid {
-  margin-top: 10px; /* Reducir el espacio superior si es necesario */
+  margin-top: 10px;
+  /* Reducir el espacio superior si es necesario */
 }
-
-  

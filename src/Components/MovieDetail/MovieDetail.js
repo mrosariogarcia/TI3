@@ -35,26 +35,26 @@ class MovieDetail extends Component {
     const storage = localStorage.getItem('favoritos');
     const parsedArray = storage ? JSON.parse(storage) : [];
 
-    if (!parsedArray.includes(this.props.movie.id)) {
-      parsedArray.push(this.props.movie.id);
+    //el this.props aca esta indefinido, entonces utilizo this.state.movie.id
+    if (this.state.movie && !parsedArray.includes(this.state.movie.id)) {
+      parsedArray.push(this.state.movie.id);
       localStorage.setItem('favoritos', JSON.stringify(parsedArray));
       this.setState({ favorito: true });
     }
   }
 
-
   quitarFavorito() {
     const storage = localStorage.getItem('favoritos');
     const parsedArray = JSON.parse(storage) || [];
 
-    const favoritosRestantes = parsedArray.filter(id => id !== this.props.movie.id);
+    const favoritosRestantes = parsedArray.filter(id => id !== this.state.movie.id);
     localStorage.setItem('favoritos', JSON.stringify(favoritosRestantes));
 
     this.setState({ favorito: false });
   }
 
   render() {
-    const { movie } = this.state;
+    const { movie, favorito } = this.state;
 
     if (movie) {
       const { title, poster_path, vote_average, release_date, runtime, overview, genres } = movie;
@@ -70,11 +70,8 @@ class MovieDetail extends Component {
             <p><strong>Duración:</strong> {runtime} minutos</p>
             <p><strong>Sinopsis:</strong> {overview}</p>
             <p><strong>Género:</strong> {generos}</p>
-            <button
-              className="botonFavorito"
-              onClick={() => this.state.favorito ? this.quitarFavorito() : this.agregarFavorito()}>
-              {this.state.favorito ? "Quitar de favoritos" : "Agregar a favoritos"}
-              <FaHeart size={20} />
+            <button className="botonFavorito" onClick={() => favorito ? this.quitarFavorito() : this.agregarFavorito()}>
+              {favorito ? "Quitar de favoritos" : "Agregar a favoritos"} <FaHeart size={20} />
             </button>
           </div>
         </section>

@@ -13,7 +13,7 @@ class Populares extends Component {
   }
 
   componentDidMount() {
-    const api = 'https://api.themoviedb.org/3/movie/now_playing?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=1';
+    const api = 'https://api.themoviedb.org/3/movie/popular?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=1';
 
     // fetch para obtener las películas en cartelera
     fetch(api)

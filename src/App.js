@@ -9,9 +9,6 @@ import SearchResults from "./Pages/SearchResults";
 import NotFound from './Pages/NotFound';
 import MovieDetail from './Components/MovieDetail/MovieDetail';
 
-
-
-
 function App() {
   return (
     <>
@@ -24,7 +21,7 @@ function App() {
           <Route path="/cartelera" component={Cartelera}></Route>
           <Route path="/search" component={SearchResults}></Route>
           <Route path="/movies/:movieId" exact component={MovieDetail}></Route>
-          <Route path="" component={NotFound}/>
+          <Route path="" component={NotFound} />
 
         </Switch>
         <Footer></Footer>

@@ -1,82 +1,94 @@
 section {
-  background-image: url('../../../public/images/fondo.jpeg'); /* Ruta desde la carpeta public */
-  background-size: cover; /* Cubre solo el contenedor */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita repeticiones */
-  padding: 50px 0; /* Padding alrededor de la sección */
-  min-height: auto; /* Ajusta la altura al contenido en lugar del 100% de la pantalla */
-  position: relative; /* Asegura que los elementos dentro de section se posicionen correctamente */
-  z-index: 1; /* Asegura que la sección esté por debajo del header */
+  background-image: url('../../../public/images/fondo.jpeg');
+  /* Ruta desde la carpeta public */
+  background-size: cover;
+  /* Cubre solo el contenedor */
+  background-position: center;
+  /* Centra la imagen */
+  background-repeat: no-repeat;
+  /* Evita repeticiones */
+  padding: 50px 0;
+  /* Padding alrededor de la sección */
+  min-height: auto;
+  /* Ajusta la altura al contenido en lugar del 100% de la pantalla */
+  position: relative;
+  /* Asegura que los elementos dentro de section se posicionen correctamente */
+  z-index: 1;
+  /* Asegura que la sección esté por debajo del header */
 }
 
-
-.titulo{
-    color: white
+.titulo {
+  color: white
 }
 
-.movie-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 90px;
-  position: relative; /* Relativo para evitar el solapamiento con otros elementos */
-}
-
-  article {
-    background-color: #fff;
-    box-shadow: 0px 4px 5px ghostwhite;
-    border-radius: 10px;
-    overflow: hidden;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease;
-    width: 300px;
-
-  }
-  
-  article:hover {
-    transform: scale(1.02);
-  }
-  
-  article img {
-    width: 100%;
-    max-width: 400px;
-    display: block;
-    border-bottom: 4px solid black;
-  }
-  
-  article div {
-    padding: 15px;
-  }
-  
-  article a {
-    font-size: 24px;
-    color: black;
-    text-decoration: none;
-    display: block;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  
-  article a:hover {
-    text-decoration: underline;
-  }
-  
-  article p {
-    color: #666;
-    font-size: 16px;
-    line-height: 1.6;
-  }
-
-  /* Estilo para el contenedor de cada película */
-.movie-grid article {
-  background-color: #01022bba; /* Azul marino */
-  color: white; /* Texto blanco para contraste */
+article {
+  background-color: #fff;
   box-shadow: 0px 4px 5px ghostwhite;
   border-radius: 10px;
   overflow: hidden;
   margin-bottom: 20px;
   transition: transform 0.3s ease;
   width: 300px;
+
+}
+
+article:hover {
+  transform: scale(1.02);
+}
+
+article img {
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  border-bottom: 4px solid black;
+}
+
+article div {
+  padding: 15px;
+}
+
+article a {
+  font-size: 24px;
+  color: black;
+  text-decoration: none;
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+article a:hover {
+  text-decoration: underline;
+}
+
+article p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  /* Aumenta el tamaño mínimo a 250px */
+  grid-gap: 40px;
+  /* Mantiene el espacio entre películas */
+  position: relative;
+}
+
+.movie-grid article {
+  background-color: #01022bba;
+  /* Azul marino */
+  color: white;
+  box-shadow: 0px 4px 5px ghostwhite;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+  width: 100%;
+  /* Ocupa el espacio disponible */
+  max-width: 250px;
+  /* Aumenta el ancho máximo a 250px */
 }
 
 /* Asegúrate de que las imágenes dentro de cada película mantengan sus estilos */
@@ -84,13 +96,15 @@ section {
   width: 100%;
   max-width: 400px;
   display: block;
-  border-bottom: 4px solid black; /* Mantén el estilo de la imagen */
+  border-bottom: 4px solid black;
+  /* Mantén el estilo de la imagen */
 }
 
 /* Estilo para los enlaces dentro de cada artículo (títulos) */
 .movie-grid article a {
   font-size: 24px;
-  color: white; /* Blanco para el texto del título */
+  color: white;
+  /* Blanco para el texto del título */
   text-decoration: none;
   display: block;
   margin-top: 10px;
@@ -99,9 +113,10 @@ section {
 }
 
 /* Estilo para los botones dentro de cada artículo */
-.movie-grid article .view-more, 
+.movie-grid article .view-more,
 .movie-grid article .favorite-button {
-  background-color: #02182e; /* Azul más oscuro para los botones */
+  background-color: #02182e;
+  /* Azul más oscuro para los botones */
   color: white;
   padding: 10px;
   border: none;
@@ -113,7 +128,8 @@ section {
 
 /* Estilo para el texto dentro de cada artículo */
 .movie-grid article p {
-  color: #cccccc; /* Color gris claro para el texto de la sinopsis */
+  color: #cccccc;
+  /* Color gris claro para el texto de la sinopsis */
   font-size: 16px;
   line-height: 1.6;
 }

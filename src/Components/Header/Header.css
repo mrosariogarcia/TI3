@@ -3,40 +3,51 @@
 .header {
   position: relative;
   width: 100%;
-  height: 300px; /* Tamaño del header */
+  height: 300px;
+  /* Tamaño del header */
   display: flex;
-  flex-direction: column; /* Para permitir que el nav esté al final */
+  flex-direction: column;
+  /* Para permitir que el nav esté al final */
   justify-content: center;
 }
 
 .banner {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Asegura que la imagen cubra todo el espacio */
+  object-fit: cover;
+  /* Asegura que la imagen cubra todo el espacio */
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; /* Envía la imagen al fondo */
+  z-index: -1;
+  /* Envía la imagen al fondo */
 }
 
 .titulo {
-  display: flex; /* Flexbox para organizar el logo y el título */
-  justify-content: flex-start; /* Mueve el contenido hacia la izquierda */
+  display: flex;
+  /* Flexbox para organizar el logo y el título */
+  justify-content: flex-start;
+  /* Mueve el contenido hacia la izquierda */
   align-items: center;
   padding: 20px;
-  gap: 20px; /* Espacio entre el logo y el título */
-  z-index: 1; /* Asegura que esté por encima del banner */
-  position: relative; /* Para controlar mejor la posición */
+  gap: 20px;
+  /* Espacio entre el logo y el título */
+  z-index: 1;
+  /* Asegura que esté por encima del banner */
+  position: relative;
+  /* Para controlar mejor la posición */
 }
 
 .logo {
   width: 150px;
   height: 150px;
-  border-radius: 50%; /* Forma circular */
+  border-radius: 50%;
+  /* Forma circular */
 }
 
 .titulos {
-  text-align: left; /* Alinea el texto del título a la izquierda */
+  text-align: left;
+  /* Alinea el texto del título a la izquierda */
 }
 
 h1 {
@@ -49,27 +60,36 @@ h1 {
 }
 
 h3 {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Bebas Neue', sans-serif;
+  ;
   color: beige;
   font-size: 20px;
   letter-spacing: 5px;
   margin: 0;
 }
+
 nav {
   position: absolute;
-  bottom: 0; /* Posiciona el nav en la parte inferior del header */
-  left: 0; /* Alinea el nav al borde izquierdo del contenedor */
+  bottom: 0;
+  /* Posiciona el nav en la parte inferior del header */
+  left: 0;
+  /* Alinea el nav al borde izquierdo del contenedor */
   background-color: #01022bba;
-  padding: 10px 20px; /* Padding alrededor del contenido */
-  display: inline-flex; /* Ajusta el contenedor para que ocupe solo el ancho del contenido */
-  justify-content: flex-start; /* Alinea el contenido al inicio (izquierda) */
-  align-items: center; /* Alinea el contenido verticalmente en el centro */
+  padding: 10px 20px;
+  /* Padding alrededor del contenido */
+  display: inline-flex;
+  /* Ajusta el contenedor para que ocupe solo el ancho del contenido */
+  justify-content: flex-start;
+  /* Alinea el contenido al inicio (izquierda) */
+  align-items: center;
+  /* Alinea el contenido verticalmente en el centro */
 }
 
 nav a {
   color: #fff;
   text-decoration: none;
-  margin-right: 20px; /* Espacio entre los enlaces */
+  margin-right: 20px;
+  /* Espacio entre los enlaces */
   font-size: 22px;
   font-weight: bold;
 }
@@ -78,3 +98,8 @@ nav a:hover {
   text-decoration: underline;
 }
 
+.titulos2 {
+  font-family: 'Bebas Neue', sans-serif;
+  padding: 5px;
+  letter-spacing: 1px;
+}

@@ -23,10 +23,10 @@ const Header = (props) => {
         <nav>
 
 
-          <Link to="/" exact="true">Home</Link>
-          <Link to="/favorites">Favorites</Link>
-          <Link to="/populares">Populares</Link>
-          <Link to="/cartelera">En Cartelera</Link>
+          <Link className="titulos2" to="/" exact="true">Home</Link>
+          <Link className="titulos2" to="/favorites">Favorites</Link>
+          <Link className="titulos2" to="/populares">Populares</Link>
+          <Link className="titulos2" to="/cartelera">En Cartelera</Link>
 
 
 

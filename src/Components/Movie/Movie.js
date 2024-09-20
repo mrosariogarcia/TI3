@@ -56,17 +56,13 @@ class Movie extends Component {
         <article className="movie-grid">
           <div>
             <img src={`https://image.tmdb.org/t/p/w400${poster_path}`} alt={title} />
-            <Link to={`/movies/${id}`}>{title}</Link>
+            <Link className="title" to={`/movies/${id}`}>{title}</Link>
 
-            <p className={this.state.showExtra ? "show" : "hide"}>{overview}</p>
+            <p className={`overview ${this.state.showExtra ? "show" : "hide"}`}>{overview}</p>
             <button onClick={() => this.verMas()}>{this.state.showExtra ? "Ver menos" : "Ver más"}</button>
 
-            <button
-              className="botonFavorito"
-              onClick={() => this.state.favorito ? this.quitarFavorito() : this.agregarFavorito()}
-            >
-              {this.state.favorito ? "Quitar de favoritos" : "Agregar a favoritos"}
-              <FaHeart size={20} />
+            <button className="botonFavorito" onClick={() => this.state.favorito ? this.quitarFavorito() : this.agregarFavorito()}>
+              {this.state.favorito ? "Quitar de favoritos" : "Agregar a favoritos"}<FaHeart size={20} />
             </button>
           </div>
         </article>
