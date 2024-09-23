@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MovieGrid from '../Components/MovieGrid/MovieGrid';
-import Loading from '../Components/Loading/Loading'; 
+import Loading from '../Components/Loading/Loading';
 
 class Cartelera extends Component {
   constructor(props) {
@@ -8,14 +8,14 @@ class Cartelera extends Component {
     this.state = {
       carteleraMovies: [],
       filterMovie: "",
-      isLoading: true, 
+      isLoading: true,
       error: null,
       pagina: 1
     };
   }
 
   componentDidMount() {
-    this.fetchMovies(); 
+    this.fetchMovies();
   }
 
   fetchMovies = () => {
@@ -26,8 +26,8 @@ class Cartelera extends Component {
       .then((response) => response.json())
       .then((data) => {
         if (data.results) {
-          const peliculasActual = []; 
-        
+          const peliculasActual = [];
+
           // principales películas
           for (let i = 0; i < carteleraMovies.length; i++) {
             peliculasActual.push(carteleraMovies[i]);
@@ -39,8 +39,8 @@ class Cartelera extends Component {
           }
 
           this.setState({
-            carteleraMovies: peliculasActual, 
-            isLoading: false 
+            carteleraMovies: peliculasActual,
+            isLoading: false
           });
 
         } else {
@@ -62,17 +62,17 @@ class Cartelera extends Component {
 
   handleVerMas = () => {
     this.setState({
-      pagina: this.state.pagina + 1 
-    }, this.fetchMovies); 
+      pagina: this.state.pagina + 1
+    }, this.fetchMovies);
   };
 
   handleSearch = (search) => {
-    this.setState({filterMovie: search.target.value})
+    this.setState({ filterMovie: search.target.value })
   }
 
   render() {
-    const { carteleraMovies, isLoading, error, filterMovie} = this.state;
-    const peliculasFiltradas = carteleraMovies.filter((movie) => 
+    const { carteleraMovies, isLoading, error, filterMovie } = this.state;
+    const peliculasFiltradas = carteleraMovies.filter((movie) =>
       movie.title.toLowerCase().includes(filterMovie.toLowerCase())
     );
 
@@ -83,29 +83,29 @@ class Cartelera extends Component {
     return (
       <section>
         <h2>Películas en Cartelera</h2>
-       <input type="text" value={filterMovie} placeholder='Buscar por titulo' onChange={this.handleSearch}/>
+        <input type="text" value={filterMovie} placeholder='Buscar por titulo' onChange={this.handleSearch} />
 
-      {error ? (
-        <p>{error}</p>
-      ) : 
-      
-      (
-        peliculasFiltradas.length > 0 ? 
+        {error ? (
+          <p>{error}</p>
+        ) :
 
-          <div className="container">
-          <MovieGrid movies={peliculasFiltradas} />
-          <button className="ver-mas" onClick={this.handleVerMas} disabled={isLoading}>
-            {isLoading ? <Loading />: 'Cargar más'}
-          </button>
-          </div>
+          (
+            peliculasFiltradas.length > 0 ?
 
-          :
+              <div className="container">
+                <MovieGrid movies={peliculasFiltradas} />
+                <button className="ver-mas" onClick={this.handleVerMas} disabled={isLoading}>
+                  {isLoading ? <Loading /> : 'Cargar más'}
+                </button>
+              </div>
 
-          <div className="container">
-          </div>
-        
-      )}
-    </section>
+              :
+
+              <div className="container">
+              </div>
+
+          )}
+      </section>
     );
   }
 }

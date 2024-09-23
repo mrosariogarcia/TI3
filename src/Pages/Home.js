@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MovieGrid from '../Components/MovieGrid/MovieGrid';
 import { SearchForm } from '../Components/SearchForm/SearchForm';
-import Loading from '../Components/Loading/Loading'; 
+import Loading from '../Components/Loading/Loading';
 import { Link } from 'react-router-dom'
 
 class Home extends Component {
@@ -10,7 +10,7 @@ class Home extends Component {
     this.state = {
       popularMovies: [],
       nowPlayingMovies: [],
-      isLoading: true, 
+      isLoading: true,
     };
   }
 
@@ -42,7 +42,7 @@ class Home extends Component {
       })
       .catch((error) => console.log(error))
       .finally(() => {
-       
+
         this.setState({ isLoading: false });
       });
   }

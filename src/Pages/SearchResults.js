@@ -7,8 +7,8 @@ export default class SearchResults extends Component {
     super(props);
     this.state = {
       searchMovie: [],
-      isLoading: true, 
-      error: null 
+      isLoading: true,
+      error: null
     };
   }
 
@@ -22,7 +22,7 @@ export default class SearchResults extends Component {
         if (data.results) {
           this.setState({
             searchMovie: data.results,
-            isLoading: false 
+            isLoading: false
           });
         } else {
           this.setState({
@@ -49,9 +49,9 @@ export default class SearchResults extends Component {
           <p className="results">Resultado de búsqueda: {this.props.location.state?.query}</p>
 
           {isLoading ? (
-            <Loading /> 
+            <Loading />
           ) : error ? (
-            <p>{error}</p> 
+            <p>{error}</p>
           ) : searchMovie.length > 0 ? (
             <MovieGrid movies={searchMovie} />
           ) : (

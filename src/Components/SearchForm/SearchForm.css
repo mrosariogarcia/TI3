@@ -45,7 +45,7 @@
   /* Color de fondo del botón cuando se pasa el ratón por encima */
 }
 
-.results{
+.results {
   font-size: 20px;
   /* Tamaño de fuente más grande */
   color: white;
@@ -65,22 +65,30 @@
 /* Para pantallas pequeñas (móviles) */
 @media (max-width: 480px) {
   .search-container {
-    flex-direction: column; /* Cambia a columna en pantallas pequeñas */
-    align-items: stretch; /* Alinea los elementos para ocupar todo el ancho */
-    gap: 5px; /* Reduce el espacio entre los elementos */
+    flex-direction: column;
+    /* Cambia a columna en pantallas pequeñas */
+    align-items: stretch;
+    /* Alinea los elementos para ocupar todo el ancho */
+    gap: 5px;
+    /* Reduce el espacio entre los elementos */
   }
 
   .search-container input {
-    font-size: 20px; /* Reduce el tamaño de fuente en móviles */
-    padding: 8px; /* Ajusta el padding */
+    font-size: 20px;
+    /* Reduce el tamaño de fuente en móviles */
+    padding: 8px;
+    /* Ajusta el padding */
   }
 
   .search-container button {
-    font-size: 16px; /* Reduce el tamaño de fuente en móviles */
-    padding: 8px; /* Ajusta el padding */
+    font-size: 16px;
+    /* Reduce el tamaño de fuente en móviles */
+    padding: 8px;
+    /* Ajusta el padding */
   }
 
   .results {
-    font-size: 18px; /* Reduce el tamaño de fuente de los resultados */
+    font-size: 18px;
+    /* Reduce el tamaño de fuente de los resultados */
   }
 }

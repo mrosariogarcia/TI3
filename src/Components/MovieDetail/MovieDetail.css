@@ -37,7 +37,8 @@
 .detail-content p {
   margin: 5px 0;
   color: white;
-  text-align: center; /* Añade esta línea para centrar el texto */
+  text-align: center;
+  /* Añade esta línea para centrar el texto */
 }
 
 
