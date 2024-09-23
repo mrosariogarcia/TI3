@@ -113,3 +113,15 @@ section h2 {
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 1px;
 }
+
+.movie-grid .ir-detalle {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #205f9d;
+  font-size: 5px;
+}
+.ir-detalle {
+  font-family: 'Bebas Neue', sans-serif;
+  color: #205f9d !important;
+  font-size: 18px !important;
+}
+
