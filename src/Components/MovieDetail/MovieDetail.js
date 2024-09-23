@@ -14,7 +14,7 @@ class MovieDetail extends Component {
   componentDidMount() {
     const { movieId } = this.props.match.params;
 
-    fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US`)
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=415551d4ecd00d6cb4f0147be963f2ed&language=en-US`)
       .then((response) => response.json())
       .then((data) => {
         this.setState({ movie: data });

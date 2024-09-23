@@ -74,6 +74,7 @@ article p {
   grid-gap: 40px;
   /* Mantiene el espacio entre películas */
   position: relative;
+
 }
 
 .movie-grid article {

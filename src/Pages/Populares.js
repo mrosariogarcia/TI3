@@ -7,6 +7,7 @@ class Populares extends Component {
     super(props);
     this.state = {
       popularesMovies: [],
+      filterMovie: "",
       isLoading: true, 
       error: null,
       pagina: 1
@@ -19,7 +20,7 @@ componentDidMount() {
 
 fetchMovies = () => {
   const { pagina, popularesMovies } = this.state;
-  const api = `https://api.themoviedb.org/3/movie/popular?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=${pagina}`;
+  const api = `https://api.themoviedb.org/3/movie/popular?api_key=415551d4ecd00d6cb4f0147be963f2ed&language=en-US&page=${pagina}`;
 
   fetch(api)
     .then((response) => response.json())
@@ -65,8 +66,15 @@ handleVerMas = () => {
   }, this.fetchMovies); 
 };
 
+handleSearch = (search) => {
+  this.setState({filterMovie: search.target.value})
+}
+
 render() {
-  const { popularesMovies, isLoading, error } = this.state;
+  const { popularesMovies, isLoading, error, filterMovie } = this.state;
+  const peliculasFiltradas = popularesMovies.filter((movie) => 
+      movie.title.toLowerCase().includes(filterMovie.toLowerCase())
+    );
 
   if (isLoading) {
     return <Loading />;
@@ -75,15 +83,31 @@ render() {
   return (
     <section>
       <h2>Películas Populares</h2>
+      <input type="text" value={filterMovie} placeholder='Buscar por titulo' onChange={this.handleSearch}/>
+
       {error ? (
         <p>{error}</p>
-      ) : (
-        <div className="container">
+      ) : 
+      
+      (
+        peliculasFiltradas.length > 0 ? 
+
+          <div className="container">
+          <MovieGrid movies={peliculasFiltradas} />
+          <button className="ver-mas" onClick={this.handleVerMas} disabled={isLoading}>
+            {isLoading ? <Loading />: 'Cargar más'}
+          </button>
+          </div>
+
+          :
+
+          <div className="container">
           <MovieGrid movies={popularesMovies} />
           <button className="ver-mas" onClick={this.handleVerMas} disabled={isLoading}>
             {isLoading ? <Loading />: 'Cargar más'}
           </button>
           </div>
+        
       )}
     </section>
   );
