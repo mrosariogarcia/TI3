@@ -60,3 +60,48 @@
 .botonFavorito:hover {
   color: #e74c3c;
 }
+
+
+
+/* MEDIA QUERIES */
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+  .detail-content {
+    max-width: 600px;
+    padding: 15px;
+  }
+
+  .detail-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .detail-content ul {
+    gap: 8px;
+  }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .detail-content {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .detail-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .detail-content p {
+    font-size: 14px;
+  }
+
+  .detail-content ul {
+    gap: 5px;
+  }
+
+  .botonFavorito {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+}

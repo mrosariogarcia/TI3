@@ -29,3 +29,42 @@ h2 {
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 1px;
 }
+
+
+/* MEDIA QUERIES */
+
+/* Pantallas medianas (tablets) */
+@media (max-width: 768px) {
+    .footer {
+        height: 100px;
+        padding: 15px;
+        justify-content: center;
+        /* Centra los elementos en lugar de alinearlos a la izquierda */
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 18px;
+        margin-left: 10px;
+        /* Menor margen en pantallas más pequeñas */
+    }
+}
+
+/* Pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+    .footer {
+        height: 80px;
+        padding: 10px;
+        flex-direction: column;
+        /* Cambia la dirección a columna para móviles */
+        justify-content: center;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 16px;
+        margin-left: 0;
+        text-align: center;
+        /* Centra el texto en dispositivos pequeños */
+    }
+}

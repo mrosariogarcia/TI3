@@ -13,7 +13,7 @@ class Favoritos extends Component {
 
   componentDidMount() {
     const storage = localStorage.getItem('favoritos');
-    const parsedArray = JSON.parse(storage) || []; // Evita errores si localStorage está vacío
+    const parsedArray = JSON.parse(storage) || []; //si localStorage está vacío
 
     Promise.all(
       parsedArray.map(id =>

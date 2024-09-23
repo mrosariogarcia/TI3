@@ -125,3 +125,29 @@ section h2 {
   font-size: 18px !important;
 }
 
+
+
+/* Pantallas pequeñas */
+@media (max-width: 480px) {
+  section {
+    padding: 20px 0;
+  }
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 10px;
+  }
+
+  article {
+    width: 100%;
+    max-width: 150px;
+  }
+
+  article a {
+    font-size: 18px;
+  }
+
+  article p {
+    font-size: 14px;
+  }
+}
