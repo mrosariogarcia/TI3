@@ -8,57 +8,86 @@ class Populares extends Component {
     this.state = {
       popularesMovies: [],
       isLoading: true, 
-      error: null 
+      error: null,
+      pagina: 1
     };
   }
 
-  componentDidMount() {
-    const api = 'https://api.themoviedb.org/3/movie/popular?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=1';
+componentDidMount() {
+  this.fetchMovies(); 
+}
 
-    // fetch para obtener las películas en cartelera
-    fetch(api)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.results) {
-          this.setState({ 
-            popularesMovies: data.results,
-            isLoading: false 
-          });
-        } else {
-          this.setState({
-            error: 'No se encuentran películas en cartelera',
-            isLoading: false
-          });
+fetchMovies = () => {
+  const { pagina, popularesMovies } = this.state;
+  const api = `https://api.themoviedb.org/3/movie/popular?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US&page=${pagina}`;
+
+  fetch(api)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.results) {
+        const peliculasActual = []; 
+      
+        // principales películas
+        for (let i = 0; i < popularesMovies.length; i++) {
+          peliculasActual.push(popularesMovies[i]);
         }
-      })
-      .catch((error) => {
-        console.log(error);
+
+        // nuevas películas
+        for (let i = 0; i < data.results.length; i++) {
+          peliculasActual.push(data.results[i]);
+        }
+
         this.setState({
-          error: 'Error al cargar las películas',
+          popularesMovies: peliculasActual, 
+          isLoading: false 
+        });
+        
+      } else {
+        this.setState({
+          error: 'No se encuentran películas populares',
           isLoading: false
         });
+      }
+    })
+
+    .catch((error) => {
+      console.log(error);
+      this.setState({
+        error: 'Error al cargar las películas populares',
+        isLoading: false
       });
+    });
+}
+
+handleVerMas = () => {
+  this.setState({
+    pagina: this.state.pagina + 1 
+  }, this.fetchMovies); 
+};
+
+render() {
+  const { popularesMovies, isLoading, error } = this.state;
+
+  if (isLoading) {
+    return <Loading />;
   }
 
-  render() {
-    const { popularesMovies, isLoading, error } = this.state;
-
-    if (isLoading) {
-      return <Loading />;
-    }
-
-    return (
-      <section>
-        <h2>Películas Populares</h2>
-        {error ? (
-          <p>{error}</p>
-        ) : (
+  return (
+    <section>
+      <h2>Películas Populares</h2>
+      {error ? (
+        <p>{error}</p>
+      ) : (
+        <>
           <MovieGrid movies={popularesMovies} />
-        )}
-      </section>
-    );
-  }
+          <button className="ver-mas" onClick={this.handleVerMas} disabled={isLoading}>
+            {isLoading ? <Loading />: 'Cargar más'}
+          </button>
+        </>
+      )}
+    </section>
+  );
+}
 }
 
 export default Populares;
-

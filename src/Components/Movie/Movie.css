@@ -97,3 +97,15 @@ section h2 {
   padding: 5px;
   letter-spacing: 1px;
 }
+.ver-mas2 {
+  display: inline-block;
+  color: #205f9d;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px solid #205f9d;
+  border-radius: 5px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}

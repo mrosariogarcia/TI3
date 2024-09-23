@@ -9,7 +9,7 @@ class Cartelera extends Component {
       carteleraMovies: [],
       isLoading: true, 
       error: null,
-      pagina: 1,
+      pagina: 1
     };
   }
 
@@ -27,6 +27,7 @@ class Cartelera extends Component {
         if (data.results) {
           const peliculasActual = []; 
         
+          // principales películas
           for (let i = 0; i < carteleraMovies.length; i++) {
             peliculasActual.push(carteleraMovies[i]);
           }
@@ -40,6 +41,7 @@ class Cartelera extends Component {
             carteleraMovies: peliculasActual, 
             isLoading: false 
           });
+
         } else {
           this.setState({
             error: 'No se encuentran películas en cartelera',
@@ -47,6 +49,7 @@ class Cartelera extends Component {
           });
         }
       })
+
       .catch((error) => {
         console.log(error);
         this.setState({
@@ -77,9 +80,9 @@ class Cartelera extends Component {
         ) : (
           <>
             <MovieGrid movies={carteleraMovies} />
-            <button onClick={this.handleVerMas} disabled={isLoading}>
-              {isLoading ? <Loading />: 'Ver más'}
-            </button>
+            <button className="ver-mas" onClick={this.handleVerMas} disabled={isLoading}>
+            {isLoading ? <Loading />: 'Cargar más'}
+          </button>
           </>
         )}
       </section>
