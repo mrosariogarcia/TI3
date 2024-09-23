@@ -78,12 +78,12 @@ class Cartelera extends Component {
         {error ? (
           <p>{error}</p>
         ) : (
-          <>
+          <div className="container">
             <MovieGrid movies={carteleraMovies} />
             <button className="ver-mas" onClick={this.handleVerMas} disabled={isLoading}>
             {isLoading ? <Loading />: 'Cargar más'}
           </button>
-          </>
+          </div>
         )}
       </section>
     );

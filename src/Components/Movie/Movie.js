@@ -29,7 +29,6 @@ class Movie extends Component {
     }
   }
 
-
   quitarFavorito() {
     const storage = localStorage.getItem('favoritos');
     const parsedArray = JSON.parse(storage) || [];

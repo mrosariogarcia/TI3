@@ -43,13 +43,15 @@ section h2 {
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 1px;
 }
+.container {
+  text-align: center;
+}
 
 .title {
   font-family: 'Bebas Neue', sans-serif;
   padding: 5px;
   letter-spacing: 1px;
 }
-
 .ver-mas:hover {
   background-color: #001f3f;
   color: white;
@@ -65,9 +67,11 @@ section h2 {
   color: #205f9d;
   /* Mantener el color azul marino del texto */
   font-size: 16px;
+  font-family: 'Bebas Neue', sans-serif;
   cursor: pointer;
   margin-top: 10px;
   /* Espacio entre el botón y el texto de 'Ver más' */
+  letter-spacing: 1px;
 
 }
 
