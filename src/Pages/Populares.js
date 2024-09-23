@@ -102,10 +102,6 @@ render() {
           :
 
           <div className="container">
-          <MovieGrid movies={popularesMovies} />
-          <button className="ver-mas" onClick={this.handleVerMas} disabled={isLoading}>
-            {isLoading ? <Loading />: 'Cargar más'}
-          </button>
           </div>
         
       )}

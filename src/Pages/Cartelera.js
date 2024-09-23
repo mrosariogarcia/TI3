@@ -7,6 +7,7 @@ class Cartelera extends Component {
     super(props);
     this.state = {
       carteleraMovies: [],
+      filterMovie: "",
       isLoading: true, 
       error: null,
       pagina: 1
@@ -65,8 +66,15 @@ class Cartelera extends Component {
     }, this.fetchMovies); 
   };
 
+  handleSearch = (search) => {
+    this.setState({filterMovie: search.target.value})
+  }
+
   render() {
-    const { carteleraMovies, isLoading, error } = this.state;
+    const { carteleraMovies, isLoading, error, filterMovie} = this.state;
+    const peliculasFiltradas = carteleraMovies.filter((movie) => 
+      movie.title.toLowerCase().includes(filterMovie.toLowerCase())
+    );
 
     if (isLoading) {
       return <Loading />;
@@ -75,17 +83,29 @@ class Cartelera extends Component {
     return (
       <section>
         <h2>Películas en Cartelera</h2>
-        {error ? (
-          <p>{error}</p>
-        ) : (
+       <input type="text" value={filterMovie} placeholder='Buscar por titulo' onChange={this.handleSearch}/>
+
+      {error ? (
+        <p>{error}</p>
+      ) : 
+      
+      (
+        peliculasFiltradas.length > 0 ? 
+
           <div className="container">
-            <MovieGrid movies={carteleraMovies} />
-            <button className="ver-mas" onClick={this.handleVerMas} disabled={isLoading}>
+          <MovieGrid movies={peliculasFiltradas} />
+          <button className="ver-mas" onClick={this.handleVerMas} disabled={isLoading}>
             {isLoading ? <Loading />: 'Cargar más'}
           </button>
           </div>
-        )}
-      </section>
+
+          :
+
+          <div className="container">
+          </div>
+        
+      )}
+    </section>
     );
   }
 }
