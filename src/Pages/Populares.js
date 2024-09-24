@@ -99,9 +99,12 @@ class Populares extends Component {
 
               <div className="movie-grid">
                 <MovieGrid movies={peliculasFiltradas} />
-                <button className="ver-mas" onClick={this.handleVerMas} disabled={isLoading}>
+                <div className="link-container">
+                <button className="cargar-mas" onClick={this.handleVerMas} disabled={isLoading}>
                   {isLoading ? <Loading /> : 'Cargar más'}
                 </button>
+                </div>
+                
               </div>
 
               :

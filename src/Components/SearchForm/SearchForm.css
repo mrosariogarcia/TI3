@@ -43,6 +43,22 @@
   letter-spacing: 1px;
 }
 
+.results-div {
+  background-color: black;
+  margin: 0px;
+  padding: 0pc;
+
+}
+
+.results2 {
+  font-size: 20px;
+  color: white;
+  margin: 0px;
+  align-items: flex-start;
+  font-family: 'Bebas Neue', sans-serif;
+  padding: 5px;
+  letter-spacing: 1px;
+}
 
 /* MEDIA QUERIES */
 

@@ -3,44 +3,39 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  background-color: #f0f0f0;
+  background-image: url("../../../public/images/fondo.jpeg");
 }
 
 .detail-content {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  max-width: 800px;
-  background-color: #03044e7c;
+  max-width: 1000px;
+  background-color: #800020;
   padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border:10px solid  beige;
+
 }
 
 .detail-content img {
   max-width: 100%;
-  border-radius: 10px;
+  max-height: 500px;
   margin-bottom: 20px;
 }
 
 .detail-content h2 {
   font-size: 2rem;
   margin-bottom: 10px;
-  color: white;
+  color: beige;
 }
 
 .detail-content p {
-  margin: 5px 0;
-  color: white;
-}
-
-.detail-content p {
-  margin: 5px 0;
+  margin: 15px;
   color: white;
   text-align: center;
-  /* Añade esta línea para centrar el texto */
-}
+  width: 500px;
 
+}
 
 .detail-content ul {
   list-style-type: none;

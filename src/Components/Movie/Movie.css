@@ -35,6 +35,20 @@ section h2 {
   letter-spacing: 1px;
 }
 
+.cargar-mas {
+  display: inline-block;
+  background-color: black;
+  color: beige;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px solid beige;
+  border-radius: 5px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 1px;
+}
+
 .title {
   font-family: 'Bebas Neue', sans-serif;
   padding: 5px;

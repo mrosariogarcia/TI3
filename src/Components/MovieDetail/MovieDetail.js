@@ -33,12 +33,15 @@ class MovieDetail extends Component {
         <section className='movie-detail'>
           <div className="detail-content">
             <img src={`https://image.tmdb.org/t/p/w500${poster_path}`} alt={title} />
-            <h2>{title}</h2>
-            <p><strong>Calificación:</strong> {vote_average} / 10</p>
-            <p><strong>Fecha de estreno:</strong> {release_date}</p>
-            <p><strong>Duración:</strong> {runtime} minutos</p>
-            <p><strong>Sinopsis:</strong> {overview}</p>
-            <p><strong>Género:</strong> {generos}</p>
+            <div>
+              <h2>{title}</h2>
+              <p><strong>Calificación:</strong> {vote_average} / 10</p>
+              <p><strong>Fecha de estreno:</strong> {release_date}</p>
+              <p><strong>Duración:</strong> {runtime} minutos</p>
+              <p><strong>Sinopsis:</strong> {overview}</p>
+              <p><strong>Género:</strong> {generos}</p>
+            </div>
+            
           </div>
         </section>
       );

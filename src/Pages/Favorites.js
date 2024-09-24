@@ -36,7 +36,11 @@ class Favoritos extends Component {
     }
 
     if (movies.length === 0) {
-      return <p className="results2">No tienes peliculas en favoritos</p>;
+      return (
+        <div className='results-div'>
+                <p className="results2">No tienes peliculas en favoritos</p>
+        </div>
+      );
     }
 
     return <MovieGrid movies={movies} />;
