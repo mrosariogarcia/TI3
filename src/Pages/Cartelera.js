@@ -83,8 +83,9 @@ class Cartelera extends Component {
     return (
       <section>
         <h2>Películas en Cartelera</h2>
-        <input type="text" value={filterMovie} placeholder='Buscar por titulo' onChange={this.handleSearch} />
-
+        <div className='search-container'>
+          <input className="ver-mas" type="text" value={filterMovie} placeholder='Filtrar Peliculas' onChange={this.handleSearch} />
+        </div>
         {error ? (
           <p>{error}</p>
         ) :
@@ -101,8 +102,7 @@ class Cartelera extends Component {
 
               :
 
-              <div className="container">
-              </div>
+              <div className="container"></div>
 
           )}
       </section>

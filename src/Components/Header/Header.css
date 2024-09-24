@@ -4,67 +4,52 @@
   position: relative;
   width: 100%;
   height: 300px;
-  /* Tamaño del header */
   display: flex;
   flex-direction: column;
-  /* Para permitir que el nav esté al final */
-  justify-content: center;
+  justify-content: flex-start;
   overflow: hidden;
-  /* Asegura que nada sobresalga */
-}
+  background-image: url("../../../public/images/banner.jpeg");
+  padding: 30px;
+  width: 1605px;
 
-.banner {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* Asegura que la imagen cubra todo el espacio */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  /* Envía la imagen al fondo */
 }
 
 .titulo {
   display: flex;
-  /* Flexbox para organizar el logo y el título */
   justify-content: flex-start;
-  /* Mueve el contenido hacia la izquierda */
-  align-items: center;
-  padding: 20px;
+  align-items: flex-start;
+  font-size: x-large;
   gap: 20px;
-  /* Espacio entre el logo y el título */
   z-index: 1;
-  /* Asegura que esté por encima del banner */
   position: relative;
-  /* Para controlar mejor la posición */
 }
 
 .logo {
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  /* Forma circular */
+  padding: 10px;
 }
 
 .titulos {
   text-align: left;
-  /* Alinea el texto del título a la izquierda */
 }
 
 h1 {
   font-family: 'Bebas Neue', sans-serif;
-  color: beige;
-  font-size: 60px;
+  color: #800020;
+  font-size: 80px;
+  font-style: bold;
   letter-spacing: 10px;
   text-transform: uppercase;
-  margin: 0;
+  margin-top: 20px;
+  margin-bottom: 0px;
 }
 
 h3 {
   font-family: 'Bebas Neue', sans-serif;
   color: beige;
-  font-size: 20px;
+  font-size: 30px;
   letter-spacing: 5px;
   margin: 0;
 }
@@ -72,36 +57,29 @@ h3 {
 nav {
   position: absolute;
   bottom: 0;
-  /* Posiciona el nav en la parte inferior del header */
   left: 0;
-  /* Alinea el nav al borde izquierdo del contenedor */
-  background-color: rgba(1, 2, 43, 0.7);
-  /* Fondo oscuro semi-transparente */
+  background-color: rgba(95, 22, 32, 0.7);
   padding: 10px 20px;
-  /* Padding alrededor del contenido */
   display: inline-flex;
-  /* Ajusta el contenedor para que ocupe solo el ancho del contenido */
-  justify-content: flex-start;
-  /* Alinea el contenido al inicio (izquierda) */
+  justify-content: center;
   align-items: center;
-  /* Alinea el contenido verticalmente en el centro */
   z-index: 1;
-  /* Asegura que el nav esté por encima del banner */
+  width: 1624px;
+
 }
 
 nav a {
-  color: #fff;
-  /* Color del texto */
+  color: beige;
   text-decoration: none;
   margin-right: 20px;
-  /* Espacio entre los enlaces */
   font-size: 22px;
   font-weight: bold;
 }
 
 nav a:hover {
   text-decoration: underline;
-  /* Subraya el texto al pasar el ratón */
+  color: #800020;
+
 }
 
 .titulos2 {

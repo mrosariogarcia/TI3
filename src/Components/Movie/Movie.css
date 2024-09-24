@@ -8,44 +8,31 @@
 
 section h2 {
   font-size: 28px;
-  /* Tamaño de fuente más grande */
-  color: #205f9d;
-  /* Azul marino */
+  color: beige;
   margin-bottom: 5px;
-  /* Reducir el espacio debajo del título */
   text-align: center;
-  /* Centrar el texto */
   font-family: 'Bebas Neue', sans-serif;
   padding: 5px;
   letter-spacing: 1px;
 }
 
-.overview {
-  font-family: 'Bebas Neue', sans-serif;
-  letter-spacing: 1px;
-}
 
 .link-container {
   text-align: center;
   margin-bottom: 10px;
-  /* Reducir el espacio debajo del enlace */
 }
 
 .ver-mas {
   display: inline-block;
-  color: #205f9d;
+  color: beige;
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
   padding: 10px 20px;
-  border: 2px solid #205f9d;
+  border: 2px solid beige;
   border-radius: 5px;
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 1px;
-}
-
-.container {
-  text-align: center;
 }
 
 .title {
@@ -55,80 +42,61 @@ section h2 {
 }
 
 .ver-mas:hover {
-  background-color: #001f3f;
+  background-color: rgba(95, 22, 32, 0.7);
   color: white;
 }
 
-/* Estilos para el botón de favoritos */
 .botonFavorito {
   display: flex;
   align-items: center;
   justify-content: center;
   background: none;
   border: none;
-  color: #205f9d;
-  /* Mantener el color azul marino del texto */
   font-size: 16px;
   font-family: 'Bebas Neue', sans-serif;
   cursor: pointer;
   margin-top: 10px;
-  /* Espacio entre el botón y el texto de 'Ver más' */
   letter-spacing: 1px;
-
 }
 
 .botonFavorito:hover {
-  color: #001f3f;
-  /* Mantener el color azul marino cuando el botón esté en hover */
+  color: rgba(95, 22, 32, 0.7);
 }
 
-/* Espacio entre el ícono y el texto */
 .botonFavorito span {
   margin-left: 8px;
 }
 
-/* Ajustar el espacio en MovieGrid si es necesario */
-.MovieGrid {
-  margin-top: 10px;
-  /* Reducir el espacio superior si es necesario */
-}
-
-.results2 {
-  font-size: 20px;
-  /* Tamaño de fuente más grande */
-  color: #205f9d;
-  /* Azul marino */
-  margin-bottom: 5px;
-  font-family: 'Bebas Neue', sans-serif;
-  padding: 5px;
-  letter-spacing: 1px;
-}
-
 .ver-mas2 {
   display: inline-block;
-  color: #205f9d;
+  color: rgba(95, 22, 32);
   text-decoration: none;
-  font-size: 10px;
+  font-size: 18px;
   font-weight: bold;
   padding: 10px 20px;
-  border: 2px solid #205f9d;
+  border: 3px solid rgba(95, 22, 32);
   border-radius: 5px;
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 1px;
 }
-
-.movie-grid .ir-detalle {
-  font-family: 'Bebas Neue', sans-serif;
-  color: #205f9d;
-  font-size: 5px;
+.ver-mas2:hover{
+  background-color: rgba(95, 22, 32, 0.7);
+  color: white;
 }
 
 .ir-detalle {
   font-family: 'Bebas Neue', sans-serif;
-  color: #205f9d !important;
+  color: beige !important;
   font-size: 18px !important;
 }
 
+.alinear{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
 
 
 /* Pantallas pequeñas */

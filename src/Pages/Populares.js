@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MovieGrid from '../Components/MovieGrid/MovieGrid';
 import Loading from '../Components/Loading/Loading';
 
+
 class Populares extends Component {
   constructor(props) {
     super(props);
@@ -83,7 +84,11 @@ class Populares extends Component {
     return (
       <section>
         <h2>Películas Populares</h2>
-        <input type="text" value={filterMovie} placeholder='Buscar por titulo' onChange={this.handleSearch} />
+        <div className='search-container'>
+          <input className="ver-mas" type="text" value={filterMovie} placeholder='Filtrar Peliculas' onChange={this.handleSearch} />
+        </div>
+        
+        
 
         {error ? (
           <p>{error}</p>
