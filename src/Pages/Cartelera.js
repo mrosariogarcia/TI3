@@ -93,7 +93,7 @@ class Cartelera extends Component {
           (
             peliculasFiltradas.length > 0 ?
 
-              <div className="container">
+              <div className="movie-grid">
                 <MovieGrid movies={peliculasFiltradas} />
                 <button className="ver-mas" onClick={this.handleVerMas} disabled={isLoading}>
                   {isLoading ? <Loading /> : 'Cargar más'}
