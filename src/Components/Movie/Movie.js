@@ -56,7 +56,7 @@ class Movie extends Component {
             <Link className="ir-detalle" to={`/movies/${id}`}>Ir detalle</Link>
             <p className={`overview ${this.state.showExtra ? "show" : "hide"}`}>{overview}</p>
             <button className="ver-mas2" onClick={() => this.verMas()}>{this.state.showExtra ? "Ver menos" : "Ver más"}</button>
-            <button className="botonFavorito" onClick={() => this.state.favorito ? this.quitarFavorito() : this.agregarFavorito()}>
+            <button className="boton-favorito" onClick={() => this.state.favorito ? this.quitarFavorito() : this.agregarFavorito()}>
               {this.state.favorito ? "QUITAR " : "AGREGAR "}<FaHeart size={20} />
             </button>
             </div>

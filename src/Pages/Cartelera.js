@@ -76,7 +76,7 @@ class Cartelera extends Component {
       movie.title.toLowerCase().includes(filterMovie.toLowerCase())
     );
 
-    if (isLoading) {
+    if (isLoading && this.state.pagina === 1) {
       return <Loading />;
     }
 
@@ -88,26 +88,25 @@ class Cartelera extends Component {
         </div>
         {error ? (
           <p>{error}</p>
-        ) :
+        ) : (
+          peliculasFiltradas.length > 0 ? (
 
-          (
-            peliculasFiltradas.length > 0 ?
-
-              <div className="movie-grid">
-                <MovieGrid movies={peliculasFiltradas} />
-                <button className="cargar-mas" onClick={this.handleVerMas} disabled={isLoading}>
-                  {isLoading ? <Loading /> : 'Cargar más'}
-                </button>
-              </div>
-
-              :
-
-              <div className="container"></div>
-
-          )}
+            <div className="movie-grid">
+              <MovieGrid movies={peliculasFiltradas} />
+              {filterMovie === "" && ( // mostrar"cargar más" solo si no hay filtro
+              <button className="cargar-mas" onClick={this.handleVerMas} disabled={isLoading}>
+                {isLoading ? <Loading /> : 'Cargar más'}
+              </button>
+              )}
+            </div>
+          ) : (
+            <p className="results">No hay resultados para ese filtro</p>
+          )
+        )}
       </section>
     );
   }
 }
+
 
 export default Cartelera;

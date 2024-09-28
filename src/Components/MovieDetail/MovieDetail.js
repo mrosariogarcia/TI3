@@ -1,29 +1,55 @@
 import { Component } from "react";
-import "./MovieDetail.css"
-import Loading from '../Loading/Loading'
-
+import "./MovieDetail.css";
+import Loading from '../Loading/Loading';
+import { FaHeart } from "react-icons/fa";
 
 class MovieDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movie: null
+      movie: null,
+      favorito: false,
     };
   }
 
   componentDidMount() {
     const { movieId } = this.props.match.params;
 
-    fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=415551d4ecd00d6cb4f0147be963f2ed&language=en-US`)
+    fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=e6a0d8ba2d9778d0953077400f26f011&language=en-US`)
       .then((response) => response.json())
       .then((data) => {
         this.setState({ movie: data });
+        // Verificar favoritos en detalle también
+        const storage = localStorage.getItem('favoritos');
+        const parsedArray = JSON.parse(storage) || [];
+        if (parsedArray.includes(movieId)) {
+          this.setState({ favorito: true });
+        }
       })
       .catch((error) => console.log(error));
   }
 
+  agregarFavorito() {
+    const storage = localStorage.getItem('favoritos');
+    const parsedArray = storage ? JSON.parse(storage) : [];
+    // El this.props acá está indefinido, entonces utilizo this.state.movie.id
+    if (this.state.movie && !parsedArray.includes(this.state.movie.id)) {
+      parsedArray.push(this.state.movie.id);
+      localStorage.setItem('favoritos', JSON.stringify(parsedArray));
+      this.setState({ favorito: true });
+    }
+  }
+
+  quitarFavorito() {
+    const storage = localStorage.getItem('favoritos');
+    const parsedArray = JSON.parse(storage) || [];
+    const favoritosRestantes = parsedArray.filter(id => id !== this.state.movie.id);
+    localStorage.setItem('favoritos', JSON.stringify(favoritosRestantes));
+    this.setState({ favorito: false });
+  }
+
   render() {
-    const { movie } = this.state;
+    const { movie, favorito } = this.state;
 
     if (movie) {
       const { title, poster_path, vote_average, release_date, runtime, overview, genres } = movie;
@@ -40,14 +66,16 @@ class MovieDetail extends Component {
               <p><strong>Duración:</strong> {runtime} minutos</p>
               <p><strong>Sinopsis:</strong> {overview}</p>
               <p><strong>Género:</strong> {generos}</p>
+              <button className="boton-favorito" onClick={() => favorito ? this.quitarFavorito() : this.agregarFavorito()}>
+                {favorito ? "QUITAR" : "AGREGAR"} <FaHeart size={20} />
+              </button>
             </div>
-            
           </div>
         </section>
       );
-    } return <Loading />;
+    }
+    return <Loading />;
   }
 }
 
 export default MovieDetail;
-

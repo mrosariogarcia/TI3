@@ -1,4 +1,3 @@
-import { queries } from '@testing-library/react';
 import React, { Component } from 'react';
 import React from 'react'
 
@@ -10,13 +9,10 @@ export class Busqueda extends Component {
     }
   }
 
-
   handleInputChange(e) {
     this.setState({
       query: e.target.value
     })
-
-
 
   }
   handleInputSubmit() {
@@ -36,8 +32,4 @@ export class Busqueda extends Component {
 
     )
   }
-
-
-
-
 }

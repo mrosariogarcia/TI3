@@ -60,7 +60,7 @@ section h2 {
   color: white;
 }
 
-.botonFavorito {
+.boton-favorito {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -73,11 +73,11 @@ section h2 {
   letter-spacing: 1px;
 }
 
-.botonFavorito:hover {
+.boton-favorito:hover {
   color: rgba(95, 22, 32, 0.7);
 }
 
-.botonFavorito span {
+.boton-favorito span {
   margin-left: 8px;
 }
 
