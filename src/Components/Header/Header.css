@@ -9,9 +9,8 @@
   justify-content: flex-start;
   overflow: hidden;
   background-image: url("../../../public/images/banner.jpeg");
+  background-size: cover;
   padding: 30px;
-  width: 1605px;
-
 }
 
 .titulo {
@@ -39,7 +38,7 @@ h1 {
   font-family: 'Bebas Neue', sans-serif;
   color: #800020;
   font-size: 80px;
-  font-style: bold;
+  font-weight: bold; 
   letter-spacing: 10px;
   text-transform: uppercase;
   margin-top: 20px;
@@ -60,12 +59,11 @@ nav {
   left: 0;
   background-color: rgba(95, 22, 32, 0.7);
   padding: 10px 20px;
-  display: inline-flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1;
-  width: 1624px;
-
+  width: 100%;
 }
 
 nav a {
@@ -79,7 +77,6 @@ nav a {
 nav a:hover {
   text-decoration: underline;
   color: #800020;
-
 }
 
 .titulos2 {
@@ -88,30 +85,39 @@ nav a:hover {
   letter-spacing: 1px;
 }
 
-/* Pantallas pequeñas (móviles) */
-@media (max-width: 480px) {
+/* MEDIA QUERIES */
+
+/* Pantallas pequeñas (móviles, ancho máximo de 420px) */
+@media (max-width: 420px) {
   .header {
-    height: 150px;
+    height: 150px; /* Ajustar la altura */
+    padding: 10px;
+    background-size: cover;
+    background-position: center;
   }
 
   .titulo {
     flex-direction: column;
     align-items: center;
+    gap: 10px;
   }
 
   .logo {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
   }
 
   h1 {
-    font-size: 30px;
+    font-size: 30px; 
     letter-spacing: 3px;
+    margin-top: 5px;
   }
 
   h3 {
-    font-size: 16px;
+    font-size: 14px;
     letter-spacing: 2px;
+    margin: 5px 0;
+    text-align: center;
   }
 
   nav {
@@ -120,7 +126,15 @@ nav a:hover {
   }
 
   nav a {
-    font-size: 16px;
+    font-size: 14px;
     margin-right: 10px;
+  }
+
+  
+  body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; 
   }
 }

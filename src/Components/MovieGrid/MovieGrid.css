@@ -148,7 +148,7 @@ article p {
 }
 
 /* Para pantallas pequeñas (móviles) */
-@media (max-width: 480px) {
+@media (max-width: 420px) {
   section {
     padding: 20px 0;
   }

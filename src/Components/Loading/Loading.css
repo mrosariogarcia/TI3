@@ -18,30 +18,29 @@
 @media (max-width: 768px) {
   .loader {
     height: 80vh;
-    /* Reduce un poco la altura para pantallas más pequeñas */
+  
   }
 
   .mensaje {
     font-size: 16px;
-    /* Reduce el tamaño de la fuente en tablets */
     margin-top: 15px;
-    /* Ajusta el margen para mejor proporción en tablets */
+    
   }
 }
 
 /* Pantallas pequeñas (móviles) */
-@media (max-width: 480px) {
+@media (max-width: 420px) {
   .loader {
     height: 70vh;
-    /* Reduce aún más la altura en móviles */
+   
   }
 
   .mensaje {
     font-size: 14px;
-    /* Reduce el tamaño de la fuente en móviles */
+   
     margin-top: 10px;
-    /* Menor margen superior para mejor ajuste en pantallas pequeñas */
+   
     text-align: center;
-    /* Centra el texto del mensaje para móviles */
+   
   }
 }

@@ -3,54 +3,34 @@
     justify-content: flex-start;
     align-items: flex-start;
     padding: 20px;
-    height: 120px;
-    width: 1625px;
+    width: 100%; 
+    min-height: 120px; 
     flex-direction: column;
     background-image: url('../../../public/images/footer.jpeg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    box-sizing: border-box;
 }
 
 h2 {
     color: rgb(123, 7, 7);
     font-size: 30px;
     padding: 2px;
-    margin: 0;
-    /* Asegura que no haya márgenes adicionales que puedan afectar el diseño */
+    margin: 0; 
     margin-left: 20px;
-    /* Añade un margen izquierdo si deseas separar el texto del borde */
     font-family: 'Bebas Neue', sans-serif;
     letter-spacing: 1px;
 }
 
-
 /* MEDIA QUERIES */
 
-/* Pantallas medianas (tablets) */
-@media (max-width: 768px) {
-    .footer {
-        height: 100px;
-        padding: 15px;
-        justify-content: center;
-        /* Centra los elementos en lugar de alinearlos a la izquierda */
-        align-items: center;
-    }
-
-    h2 {
-        font-size: 18px;
-        margin-left: 10px;
-        /* Menor margen en pantallas más pequeñas */
-    }
-}
-
 /* Pantallas pequeñas (móviles) */
-@media (max-width: 480px) {
+@media (max-width: 420px) {
     .footer {
-        height: 80px;
+        min-height: 80px; 
         padding: 10px;
-        flex-direction: column;
-        /* Cambia la dirección a columna para móviles */
+        flex-direction: column; 
         justify-content: center;
         align-items: center;
     }
@@ -59,6 +39,5 @@ h2 {
         font-size: 16px;
         margin-left: 0;
         text-align: center;
-        /* Centra el texto en dispositivos pequeños */
     }
 }
